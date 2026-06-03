@@ -1,3 +1,4 @@
+import pandas as pd
 from utils.utils import Utils
 
 class Services:
@@ -114,4 +115,40 @@ class Services:
         print("Nota fiscal (vendas da Sessão)")
         for sale in sales_data:
             print(f"Horario: {sale['horario']} - Item: {sale['item']} - Quantidade: {sale['quantidade']} - Valor: R${sale['valor']:.2f}")
+    
+    @staticmethod
+    def generate_balance(stock_data:list, sales_data:list) -> str:
+        if not sales_data:
+            print("Nenhuma venda registrada.")
+            return
         
+        df_sales = pd.DataFrame(sales_data)
+        df_stock = pd.DataFrame(stock_data)
+
+        total_balance = df_sales['valor'].sum()
+        mean_sells = df_sales['valor'].mean()
+        max_sell = df_sales['valor'].max()
+        min_sell = df_sales['valor'].min()
+
+        ranking_livros = df_sales.groupby('item')['valor'].sum().sort_values(ascending=False)
+
+        total_patrimonio = (df_stock['preco'] * df_stock['quantidade']).sum()
+
+        report = f"""
+        ======================= PAINEL DE BALANÇO =======================
+        - TOTAL DE VENDAS REALIZADAS: R${total_balance:.2f}
+        - MÉDIA DE VENDAS REALIZADAS: R${mean_sells:.2f}    
+        - MAIOR VENDA REALIZADA: R${max_sell:.2f}
+        - MENOR VENDA REALIZADA: R${min_sell:.2f}
+        - PATRIMÔNIO TOTAL: R${total_patrimonio:.2f}
+
+        --- RANKING DE LIVROS MAIS VENDIDOS (QTD) ---
+        {ranking_livros.to_string()}
+        =================================================================
+        """
+        return report
+
+
+
+
+

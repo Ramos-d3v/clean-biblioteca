@@ -4,11 +4,11 @@
         "autor": "George Orwell",
         "ano": 1949,
         "preco": 45.0,
-        "quantidade": 10
+        "quantidade": 0
     },
     {
-        "nome": "O Pequeno Príncipe",
-        "autor": "Antoine de Saint-Exupéry",
+        "nome": "O Pequeno Pr\u00edncipe",
+        "autor": "Antoine de Saint-Exup\u00e9ry",
         "ano": 1943,
         "preco": 25.9,
         "quantidade": 40
@@ -35,8 +35,8 @@
         "quantidade": 20
     },
     {
-        "nome": "Grande Sertão: Veredas",
-        "autor": "Guimarães Rosa",
+        "nome": "Grande Sert\u00e3o: Veredas",
+        "autor": "Guimar\u00e3es Rosa",
         "ano": 1956,
         "preco": 75.0,
         "quantidade": 12

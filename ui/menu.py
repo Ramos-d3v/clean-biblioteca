@@ -89,8 +89,8 @@ class Menu:
                 case 7:
                     Services.generate_invoice(self.data_sales)
                 case 8:
-                    print("Painel de estatísticas e balanço")
-                
+                    relatorio = Services.generate_balance(self.data_stock, self.data_sales)
+                    print(relatorio)
                 case _:
                     print("Comando inválido. Por favor, tente novamente.")
             

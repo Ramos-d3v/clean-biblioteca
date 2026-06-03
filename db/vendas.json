@@ -4,5 +4,11 @@
         "item": "1984",
         "quantidade": 10,
         "valor": 450.0
+    },
+    {
+        "horario": "03-06-26 17:57:22",
+        "item": "1984",
+        "quantidade": 10,
+        "valor": 450.0
     }
 ]
