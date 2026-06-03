@@ -87,7 +87,7 @@ class Menu:
                     else:
                         Services.make_promotions(self.data_stock, porcentagem)
                 case 7:
-                    print("Nota fiscal (vendas da Sessão)")
+                    Services.generate_invoice(self.data_sales)
                 case 8:
                     print("Painel de estatísticas e balanço")
                 

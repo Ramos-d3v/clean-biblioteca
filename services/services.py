@@ -108,3 +108,10 @@ class Services:
             print("Promoção aplicada com sucesso!")
             
         Utils.save_json_file("db/estoque.json", stock_data)
+
+    @staticmethod
+    def generate_invoice(sales_data:list) -> None:
+        print("Nota fiscal (vendas da Sessão)")
+        for sale in sales_data:
+            print(f"Horario: {sale['horario']} - Item: {sale['item']} - Quantidade: {sale['quantidade']} - Valor: R${sale['valor']:.2f}")
+        
