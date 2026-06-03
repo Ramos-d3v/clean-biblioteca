@@ -34,7 +34,7 @@ class Services:
             "horario": Utils.get_current_datetime(),
             "item": stock_data[book_id - 1]['nome'],
             "quantidade": quantity,
-            "valor": valor_venda  # <-- Mudado aqui!
+            "valor": valor_venda  
         })
         print(f"Venda registrada: {sales_data[-1]}")
 
@@ -87,3 +87,24 @@ class Services:
             if search_term_lower in book['nome'].lower() or search_term_lower in book['autor'].lower():
                 results.append(book)
         return results
+    
+    @staticmethod
+    def make_promotions(stock_data:list, discount_percentage: float, book_id:int = None ) -> None:
+        if book_id is not None:
+            
+            if not Utils.verify_id(book_id, stock_data):
+                print("ERRO: Id do livro invalido")
+                return
+            
+            preco_atual = stock_data[book_id - 1]['preco']
+            stock_data[book_id - 1]['preco'] = round(preco_atual * (100 - 
+            discount_percentage) / 100, 2)
+            
+            print("Promoção aplicada com sucesso!") 
+            Utils.save_json_file("db/estoque.json", stock_data)
+        else:
+            for book in stock_data:
+                round(book['preco'] * (100 - discount_percentage) / 100, 2)
+            print("Promoção aplicada com sucesso!")
+            
+        Utils.save_json_file("db/estoque.json", stock_data)

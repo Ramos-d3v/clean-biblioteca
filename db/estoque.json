@@ -3,21 +3,42 @@
         "nome": "1984",
         "autor": "George Orwell",
         "ano": 1949,
-        "preco": 50.0,
+        "preco": 45.0,
+        "quantidade": 10
+    },
+    {
+        "nome": "O Pequeno Príncipe",
+        "autor": "Antoine de Saint-Exupéry",
+        "ano": 1943,
+        "preco": 25.9,
+        "quantidade": 40
+    },
+    {
+        "nome": "O Alquimista",
+        "autor": "Paulo Coelho",
+        "ano": 1988,
+        "preco": 42.0,
+        "quantidade": 15
+    },
+    {
+        "nome": "Harry Potter e a Pedra Filosofal",
+        "autor": "J.K. Rowling",
+        "ano": 1997,
+        "preco": 59.9,
+        "quantidade": 60
+    },
+    {
+        "nome": "Brave New World",
+        "autor": "Aldous Huxley",
+        "ano": 1932,
+        "preco": 38.5,
         "quantidade": 20
     },
     {
-        "nome": "Enzo",
-        "autor": "ramos",
-        "ano": 2007,
-        "preco": 2000.0,
-        "quantidade": 100
-    },
-    {
-        "nome": "Lucas",
-        "autor": "chato",
-        "ano": 2012,
-        "preco": 200.0,
-        "quantidade": 99700
+        "nome": "Grande Sertão: Veredas",
+        "autor": "Guimarães Rosa",
+        "ano": 1956,
+        "preco": 75.0,
+        "quantidade": 12
     }
 ]

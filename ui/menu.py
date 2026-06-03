@@ -43,7 +43,9 @@ class Menu:
                     id_book = Utils.input_force_int("Digite o ID do livro que deseja vender: ")
                     quantity = Utils.input_force_int("Digite a quantidade que deseja vender: ")
                     valor_faturado = Services.sell_register(self.data_stock, self.data_sales, id_book, quantity)
-                    print(f"Valor faturado nessa venda: R${valor_faturado:.2f}")
+                    self.caixa += valor_faturado
+                    if valor_faturado > 0:
+                        print(f"Valor faturado nessa venda: R${valor_faturado:.2f}")
                 case 2:
                     nome = Utils.input_non_empty_string("Digite o nome do livro: ")
                     autor = Utils.input_non_empty_string("Digite o nome do autor: ")
@@ -76,7 +78,14 @@ class Menu:
                         print("Nenhum livro encontrado com esse nome ou autor.")
 
                 case 6:
-                    print("Promoções")
+
+                    aplicacao_desconto = Utils.input_force_int("Coloque 1 para aplicar desconto geral, e 0 para aplicar apenas em um livro: ")
+                    porcentagem = Utils.input_force_float("Digite a porcentagem de desconto: ")
+                    if aplicacao_desconto == 0:
+                        id_book = Utils.input_force_int("Digite o ID do livro que deseja aplicar o desconto: ")
+                        Services.make_promotions(self.data_stock, porcentagem, id_book)
+                    else:
+                        Services.make_promotions(self.data_stock, porcentagem)
                 case 7:
                     print("Nota fiscal (vendas da Sessão)")
                 case 8:
