@@ -1,0 +1,23 @@
+[
+    {
+        "nome": "1984",
+        "autor": "George Orwell",
+        "ano": 1949,
+        "preco": 50.0,
+        "quantidade": 20
+    },
+    {
+        "nome": "Enzo",
+        "autor": "ramos",
+        "ano": 2007,
+        "preco": 2000.0,
+        "quantidade": 100
+    },
+    {
+        "nome": "Lucas",
+        "autor": "chato",
+        "ano": 2012,
+        "preco": 200.0,
+        "quantidade": 99700
+    }
+]
